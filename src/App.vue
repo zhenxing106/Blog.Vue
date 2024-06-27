@@ -16,19 +16,19 @@
               >
                 <span>登录</span>
               </a>
-              <a
-                href="https://ids.neters.club/account/register"
+              <!-- <a
+                href="#"
                 target="_blank"
                 class="header-container-userinfo-login header-container-user-btn header-container-hv header-container-user-size"
                 role="button"
                 tabindex="-1"
               >
                 <span>注册</span>
-              </a>
+              </a> -->
             </template>
             <template v-else>
               <a
-                href="https://ids.neters.club/"
+                href="#"
                 class="header-container-banner-item-btn"
               >{{ sysUserName }}</a>
               <a
@@ -39,7 +39,7 @@
               >
                 <span>写文章</span>
               </a>
-              <span class="header-container-logout" @click="logout">注销</span>
+               <span class="header-container-logout" @click="logout">注销</span>
             </template>
           </div>
           <div class="header-container-banner">
@@ -48,7 +48,7 @@
                 <a class="header-container-banner-item-btn" href="/">首页</a>
                 <a
                   class="header-container-banner-item-btn"
-                  href="http://vueadmin.neters.club/"
+                  href="http://127.0.0.1:2364/"
                   target="_blank"
                 >Admin管理后台</a>
               </div>
@@ -83,13 +83,18 @@ export default {
   watch: {
     $route: async function(to, from) {
       //这里使用Id4授权认证，用Jwt，请删之；
-      await this.refreshUserInfo();
+      // await this.refreshUserInfo();
     }
   },
   methods: {
     async login() {
       try {
-        await applicationUserManager.login();
+        // this.sysUserName = window.localStorage.getItem("USER_NAME") || "admins";
+        // this.sysUserName= "admins"
+        // window.localStorage.setItem("USER_NAME","admins")
+        this.$router.push('/login');
+        // this.$router.go(0);
+        // await applicationUserManager.login();
       } catch (error) {
         console.log(error);
         this.$root.$emit("show-snackbar", { message: error });
@@ -98,8 +103,9 @@ export default {
     async logout() {
       try {
         window.localStorage.removeItem("USER_NAME");
-        await applicationUserManager.logout();
+        //await applicationUserManager.logout();
         this.$store.commit("saveToken", "");
+        this.$router.go(0);
       } catch (error) {
         console.log(error);
         this.$root.$emit("show-snackbar", { message: error });

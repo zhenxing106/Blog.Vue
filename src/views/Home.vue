@@ -8,7 +8,7 @@
                     <div class="whitebg bloglist">
                         <h2 class="htitle">最新博文
                             <router-link :to="'/Editor'" class="prev" style="float:right;" rel="prev">
-                                Add My Study
+                                写文章
                             </router-link>
                         </h2>
                         <ul>
@@ -44,7 +44,7 @@
                 <div v-else name="fade" mode="out-in"  class="whitebg bloglist">
                     <h2 class="htitle">最新博文
                         <router-link :to="'/Editor'" class="prev" style="float:right;" rel="prev">
-                            Add My Study
+                            写文章
                         </router-link>
                     </h2>
                     <ul>
@@ -79,20 +79,11 @@
             <div class="rbox">
                 <div class="card">
                     <h2></h2>
-                    <p>Nick：laozhang is phi</p>
+                    <p>Nick：xiangzx</p>
                     <p>Work：.net core & Vue</p>
-                    <p>Add：Peking Haidian</p>
-                    <p>Email：3143422472@qq.com</p>
+                    <p>Address：Wu Han</p>
+                    <p>Email：litterming@outlook.com</p>
                     <ul class="linkmore">
-                        <li>
-                            <a href="http://laozhang-is-phi.cnblogs.com/" target="_blank" class="iconfont icon-zhuye" title="网站地址"></a>
-                        </li>
-                        <li>
-                            <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=3143422472@qq.com" target="_blank" class="iconfont icon-youxiang" title="我的邮箱"></a>
-                        </li>
-                        <li>
-                            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3143422472&amp;site=qq&amp;menu=yes" target="_blank" class="iconfont icon---" title="QQ联系我"></a>
-                        </li>
                         <li>
                             <a href="https://github.com/anjoy8" target="_blank" class="iconfont icon-weixin" title="github"></a>
                         </li>
